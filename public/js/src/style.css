@@ -1,3 +1,5 @@
 .hello {
   color: red;
+  /*↓うまくいかなかった*/
+  /*background: url('./../dist/sign-check-icon.png');*/
 }
