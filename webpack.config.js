@@ -1,12 +1,17 @@
 const path = require('path');
 
+var src_dir = './public/js/src/';
+
 module.exports = {
   // エントリーポイントの設定
-  entry: './public/js/src/index.js',
+  entry: {
+    app: src_dir+'index.js',
+    print: src_dir+'print.js'
+  },
   // 出力の設定
   output: {
     // 出力するファイル名
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     // 出力先のパス（v2系以降は絶対パスを指定する必要がある）
     path: path.join(__dirname, 'public/js/dist')
   }
