@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var src_dir = './public/js/src/';
 
@@ -8,6 +9,13 @@ module.exports = {
     app: src_dir+'index.js',
     print: src_dir+'print.js'
   },
+  
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Output Management'
+    })
+  ],
+
   // 出力の設定
   output: {
     // 出力するファイル名
