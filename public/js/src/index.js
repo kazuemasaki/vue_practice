@@ -7,7 +7,6 @@ function component() {
   var btn = document.createElement('button');
 
   btn.innerHTML = 'Click me and check the console!';
-  btn.id = 'webpackbtn';
   btn.onclick = printMe;
 
   element.appendChild(btn);
@@ -15,16 +14,15 @@ function component() {
   return element;
 }
 
-document.body.appendChild(component());
-console.log('live?');
+  let element = component(); // Store the element to re-render on print.js changes
+  document.body.appendChild(element);
+
 if (module.hot) {
   module.hot.accept('./print.js', function() {
     console.log('Accepting the updated printMe module!');
-    printMe();
-
-    //クリックイベント再登録
-    var btn = document.getElementById('webpackbtn');
-    btn.onclick = '';
-    btn.onclick = printMe;
+    
+    document.body.removeChild(element);
+    element = component(); // Re-render the "component" to update the click handler
+    document.body.appendChild(element);
   })
 }
