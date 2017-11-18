@@ -18,6 +18,15 @@ module.exports = {
     hot: true
   },
 
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
+  },
+
   plugins: [
     new CleanWebpackPlugin(['public/js/dist']),
     new HtmlWebpackPlugin({
