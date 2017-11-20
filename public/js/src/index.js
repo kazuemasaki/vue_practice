@@ -1,6 +1,11 @@
 import { cube } from './math.js';
 import printMe from './print.js';
 import './styles.css'; 
+
+if (process.env.NODE_ENV !== 'production') {
+  console.log('Looks like we are in development mode!');
+}
+
 function component() {
   var element = document.createElement('pre');
 
@@ -8,7 +13,7 @@ function component() {
     'Hello webpack!',
     '5 cubed is equal to ' + cube(5)
   ].join('\n\n');
-  
+
   var btn = document.createElement('button');
 
   btn.innerHTML = 'Click me and check the console!';
