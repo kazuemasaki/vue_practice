@@ -1,0 +1,16 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+	"settings":
+	{
+		// インデントの幅
+		"tab_size": 2,
+
+		// タブをスペースに変換
+		"translate_tabs_to_spaces": true,
+	}
+}
