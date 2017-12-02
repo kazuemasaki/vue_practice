@@ -4,3 +4,7 @@ var app = new Vue({
     message: 'Hello Vue!'
   }
 })
+setInterval(function(){
+  console.log('baaasss');
+}, 1000);
+
