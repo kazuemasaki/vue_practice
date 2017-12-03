@@ -19,7 +19,7 @@ module.exports = {
     }),
     // })
     new UglifyJSPlugin({
-      // sourceMap: true
+      sourceMap: true
     })
   ]
 }
