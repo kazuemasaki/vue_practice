@@ -49,6 +49,36 @@ var app6 = new Vue({
   }
 })
 
+Vue.component('todo-item', {
+  props: ['todo'],
+  template: '<li>{{ todo.text }}</li>'
+})
+var app7 = new Vue({
+  el: '#app-7',
+  data: {
+    groceryList: [
+      { id: 0, text: 'Vegetables' },
+      { id: 1, text: 'Cheese' },
+      { id: 2, text: 'Whatever else humans are supposed to eat' }
+    ]
+  }
+})
+
+Vue.component('todo-item2', {
+  props: ['todo','additional_text'],
+  template: '<li>{{ todo.text }} {{ additional_text }}</li>'
+})
+var app7_2 = new Vue({
+  el: '#app-7_2',
+  data: {
+    grocery:{
+      id: 0, text: 'Vegetables'
+    },
+    hoge:1
+  }
+})
+
+
 setInterval(function(){
   console.log('baaasss');
 }, 1000);
