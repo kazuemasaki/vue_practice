@@ -1,25 +1,25 @@
-var app = new Vue({
+new Vue({
   el: '#app',
   data: {
     message: 'Hello Vue!'
   }
 })
 
-var app2 = new Vue({
+new Vue({
   el: '#app-2',
   data: {
     message: 'You loaded this page on ' + new Date().toLocaleString()
   }
 })
 
-var app3 = new Vue({
+new Vue({
   el: '#app-3',
   data: {
     seen: true
   }
 })
 
-var app4 = new Vue({
+new Vue({
   el: '#app-4',
   data: {
     todos: [
@@ -30,19 +30,20 @@ var app4 = new Vue({
   }
 })
 
-var app5 = new Vue({
+new Vue({
   el: '#app-5',
   data: {
     message: 'Hello Vue.js!'
   },
   methods: {
     reverseMessage: function () {
+      'use strict';
       this.message = this.message.split('').reverse().join('')
     }
   }
 })
 
-var app6 = new Vue({
+new Vue({
   el: '#app-6',
   data: {
     message: 'Hello Vue!'
@@ -53,7 +54,7 @@ Vue.component('todo-item', {
   props: ['todo'],
   template: '<li>{{ todo.text }}</li>'
 })
-var app7 = new Vue({
+new Vue({
   el: '#app-7',
   data: {
     groceryList: [
@@ -68,7 +69,7 @@ Vue.component('todo-item2', {
   props: ['todo','additional_text'],
   template: '<li>{{ todo.text }} {{ additional_text }}</li>'
 })
-var app7_2 = new Vue({
+new Vue({
   el: '#app-7_2',
   data: {
     grocery:{
@@ -80,6 +81,7 @@ var app7_2 = new Vue({
 
 
 setInterval(function(){
+  'use strict';
   console.log('baaasss');
 }, 1000);
 
