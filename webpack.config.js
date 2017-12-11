@@ -29,6 +29,11 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: "eslint-loader",
+        options: {
+          fix: true,
+          cache: true,
+          formatter: require("eslint/lib/formatters/codeframe")
+        }
       },
       {
         test: /\.js$/,

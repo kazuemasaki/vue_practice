@@ -5,11 +5,16 @@
   },
   "extends": "eslint:recommended",
   "globals": {
+    "Vue": false
+  },
+  "parserOptions": {
+    "ecmaVersion": 2015
   },
   "rules": {
    "no-console": "off",
     "no-extra-semi": "warn",
     "no-undef": "warn",
+    "no-global-assign": "warn",
     "quotes": ["warn", "single"],
     "space-before-blocks": ["warn", { "functions": "always" }]
   }

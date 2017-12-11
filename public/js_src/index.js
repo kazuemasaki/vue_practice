@@ -54,6 +54,7 @@ Vue.component('todo-item', {
   props: ['todo'],
   template: '<li>{{ todo.text }}</li>'
 })
+
 new Vue({
   el: '#app-7',
   data: {
@@ -78,7 +79,6 @@ new Vue({
     hoge:1
   }
 })
-
 
 setInterval(function() {
   'use strict';
