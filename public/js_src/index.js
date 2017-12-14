@@ -116,6 +116,16 @@ new Vue({
   }
 })
 
+new Vue({
+  el:'#app-formula',
+  data:{
+    number: 10,
+    ok: true,
+    id: 'hoge',
+    message:'reverse'
+  }
+})
+
 setInterval(function() {
   'use strict';
   console.log('baaasss');

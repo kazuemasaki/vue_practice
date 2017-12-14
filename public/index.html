@@ -57,6 +57,14 @@
     <div v-bind:id="dynamicId">this div's id is <b>{{dynamicId}}</b> now!</div>
     <button v-bind:disabled="isButtonDisabled">Button</button>
   </div>
+  <div id="app-formula">
+    <ul>
+      <li>{{ number + 1 }}</li>
+      <li>{{ ok ? 'YES' : 'NO' }}</li>
+      <li v-bind:id="'list-' + id">{{ message.split('').reverse().join('') }}</li>
+    </ul>
+  </div>
+
   <a href="./hoge/foo.html">link</a>
   <script src="./js/index.bundle.js"></script>
 </body>
