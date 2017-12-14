@@ -92,6 +92,13 @@ new Vue({
   }
 })
 
+new Vue({
+  el: '#app-html',
+  data:{
+    rawHtml:'<span style="color:red">This should be red.</span>'
+  }
+})
+
 setInterval(function() {
   'use strict';
   console.log('baaasss');

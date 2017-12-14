@@ -49,6 +49,10 @@
       <todo-item2 v-bind:todo="grocery" v-bind:additional_text="hoge"></todo-item2>
     </ol>
   </div>  
+  <div id="app-html">
+    <p>Using mustaches: {{ rawHtml }}</p>
+    <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+  </div>
   <a href="./hoge/foo.html">link</a>
   <script src="./js/index.bundle.js"></script>
 </body>
