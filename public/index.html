@@ -53,6 +53,10 @@
     <p>Using mustaches: {{ rawHtml }}</p>
     <p>Using v-html directive: <span v-html="rawHtml"></span></p>
   </div>
+  <div id="app-prop">
+    <div v-bind:id="dynamicId">this div's id is <b>{{dynamicId}}</b> now!</div>
+    <button v-bind:disabled="isButtonDisabled">Button</button>
+  </div>
   <a href="./hoge/foo.html">link</a>
   <script src="./js/index.bundle.js"></script>
 </body>

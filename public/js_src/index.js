@@ -99,6 +99,23 @@ new Vue({
   }
 })
 
+new Vue({
+  el:'#app-prop',
+  data:{
+    dynamicId:'first-id',
+    isButtonDisabled:null
+  },
+  created: function () {
+    setTimeout( () => { //ES6 アロー関数() => を使うことで、
+                        //setTimeout内のthisは呼び出し元のthisとなる
+                        //refs http://chaika.hatenablog.com/entry/2017/03/31/083000
+      'use strict';
+      this.dynamicId = 'afterfivesecond';
+      this.isButtonDisabled = true;
+    }, 5000);
+  }
+})
+
 setInterval(function() {
   'use strict';
   console.log('baaasss');
