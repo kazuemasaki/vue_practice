@@ -136,14 +136,22 @@ new Vue({
     reversedMessage: function () {
       // `this` は vm インスタンスを指します
       return this.message.split('').reverse().join('')
-    }
+    },
+    now: function () {
+      return Date.now()
+    }    
   },
   created: function () {
     setTimeout( () => { 
       'use strict';
       this.message = 'change str';
     }, 5000);
-  }
+  },
+  methods: {
+    reverseMessage: function () {
+      return this.message.split('').reverse().join('')
+    }
+  }  
 })
 
 setInterval(function() {
