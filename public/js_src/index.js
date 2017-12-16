@@ -154,6 +154,48 @@ new Vue({
   }  
 })
 
+new Vue({
+  el: '#watched_property',
+  data: {
+    firstName: 'Foo',
+    lastName: 'Bar',
+    fullName: 'Foo Bar'
+  },
+  watch: {
+    firstName: function (val) {
+      this.fullName = val + ' ' + this.lastName
+    },
+    lastName: function (val) {
+      this.fullName = this.firstName + ' ' + val
+    }
+  },
+  created: function () {
+    setTimeout( () => { 
+      'use strict';
+      this.lastName = 'lastname';
+    }, 5000);
+  }
+})
+
+new Vue({
+  el: '#computed_property',
+  data: {
+    firstName: 'Foo',
+    lastName: 'Bar'
+  },
+  computed: {
+    fullName: function () {
+      return this.firstName + ' ' + this.lastName
+    }
+  },
+  created: function () {
+    setTimeout( () => { 
+      'use strict';
+      this.lastName = 'lastname';
+    }, 5000);
+  }  
+})
+
 setInterval(function() {
   'use strict';
   console.log('baaasss');
