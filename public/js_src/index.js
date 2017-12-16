@@ -126,6 +126,26 @@ new Vue({
   }
 })
 
+new Vue({
+  el: '#example',
+  data: {
+    message: 'Hello'
+  },
+  computed: {
+    // 算出 getter 関数
+    reversedMessage: function () {
+      // `this` は vm インスタンスを指します
+      return this.message.split('').reverse().join('')
+    }
+  },
+  created: function () {
+    setTimeout( () => { 
+      'use strict';
+      this.message = 'change str';
+    }, 5000);
+  }
+})
+
 setInterval(function() {
   'use strict';
   console.log('baaasss');
