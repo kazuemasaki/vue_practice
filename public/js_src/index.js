@@ -184,8 +184,17 @@ new Vue({
     lastName: 'Bar'
   },
   computed: {
-    fullName: function () {
-      return this.firstName + ' ' + this.lastName
+    fullName: {
+      // getter 関数
+      get: function () {
+        return this.firstName + ' ' + this.lastName
+      },
+      // setter 関数
+      set: function (newValue) {
+        var names = newValue.split(' ')
+        this.firstName = names[0]
+        this.lastName = names[names.length - 1]
+      }
     }
   },
   created: function () {
@@ -193,6 +202,10 @@ new Vue({
       'use strict';
       this.lastName = 'lastname';
     }, 5000);
+
+    setTimeout( () => {
+      this.fullName = 'Will Smith'
+    },10000);
   }  
 })
 
