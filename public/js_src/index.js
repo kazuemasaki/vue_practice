@@ -209,6 +209,52 @@ new Vue({
   }  
 })
 
+new Vue({
+  el: '#watch-example',
+  data: {
+    question: '',
+    answer: 'I cannot give you an answer until you ask a question!',
+    img:''
+  },
+  watch: {
+    // この関数は question が変わるごとに実行されます。
+    question: function (newQuestion) {
+      this.answer = 'Waiting for you to stop typing...'
+      this.getAnswer()
+    }
+  },
+  methods: {
+    // _.debounce は特にコストの高い処理の実行を制御するための
+    // lodash の関数です。この場合は、どのくらい頻繁に yesno.wtf/api
+    // へのアクセスすべきかを制限するために、ユーザーの入力が完全に
+    // 終わるのを待ってから ajax リクエストを実行しています。
+    // _.debounce (とその親戚である _.throttle )  についての詳細は
+    // https://lodash.com/docs#debounce を見てください。
+    getAnswer: _.debounce(
+      function () {
+        if (this.question.indexOf('?') === -1) {
+          this.answer = 'Questions usually contain a question mark. ;-)'
+          this.img = ''
+          return
+        }
+        this.answer = 'Thinking...'
+        var vm = this
+        axios.get('https://yesno.wtf/api')
+          .then(function (response) {
+            vm.answer = _.capitalize(response.data.answer)
+            vm.img = response.data.image
+          })
+          .catch(function (error) {
+            vm.answer = 'Error! Could not reach the API. ' + error
+            vm.img = ''
+          })
+      },
+      // ユーザーの入力が終わるのを待つ時間をミリ秒で指定します。
+      500
+    )
+  }
+})
+
 setInterval(function() {
   'use strict';
   console.log('baaasss');
