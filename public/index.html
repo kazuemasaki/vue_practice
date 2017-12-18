@@ -80,6 +80,11 @@
     <p>{{ answer }}</p>
     <p v-if="img"><img v-bind:src="img"/></p>
   </div>
+  <div id="obj-example" class="static"
+     v-bind:class="{ active: isActive, 'text-danger': hasError }">
+     https://jp.vuejs.org/v2/guide/class-and-style.html#%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%A7%8B%E6%96%87
+    <div v-bind:class="classObject"></div>     
+  </div>
 
   <a href="./hoge/foo.html">link</a>
   <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>

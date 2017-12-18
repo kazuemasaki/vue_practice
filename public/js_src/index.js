@@ -218,7 +218,7 @@ new Vue({
   },
   watch: {
     // この関数は question が変わるごとに実行されます。
-    question: function (newQuestion) {
+    question: function () {
       this.answer = 'Waiting for you to stop typing...'
       this.getAnswer()
     }
@@ -253,6 +253,22 @@ new Vue({
       500
     )
   }
+})
+
+new Vue({
+  el:'#obj-example',
+  data: {
+    isActive: true,
+    hasError: false,
+  },
+  computed: {
+    classObject: function () {
+      return {
+        active: this.isActive && !this.error,
+        'text-danger': this.error && this.error.type === 'fatal'
+      }
+    }
+  }  
 })
 
 setInterval(function() {
