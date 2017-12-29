@@ -311,7 +311,9 @@ new Vue({
     },
     overridingStyles: {
       color: 'yellow',
-      fontStyle : 'italic'
+      fontStyle : 'italic',
+      backgroundColor : 'red',
+      transform:'rotate(40deg)'
     }
   }
 })
