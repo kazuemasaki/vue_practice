@@ -322,7 +322,8 @@ new Vue({
   el:'#v-if-example',
   data:{
     ok:false,
-    template:true
+    template:true,
+    type:'D'
   }
 })
 
