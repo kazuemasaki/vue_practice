@@ -271,6 +271,15 @@ new Vue({
   }  
 })
 
+new Vue({
+  el:'#arr-example',
+  data: {
+    // activeClass: 'active',
+    errorClass: 'text-danger',
+    isActive:1 //truthy
+  }
+})
+
 setInterval(function() {
   'use strict';
   console.log('baaasss');
