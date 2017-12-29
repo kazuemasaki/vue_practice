@@ -89,6 +89,10 @@
   <div id="in-component">
     <my-component class="baz boo" v-bind:class="{ active: isActive }"></my-component>
   </div>
+  <div id="inline-style-object-syntax">
+    <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">testtesttest!!</div>
+    <div v-bind:style="styleObject">objecttest!</div>
+  </div>
 
   <a href="./hoge/foo.html">link</a>
   <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>

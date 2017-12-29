@@ -290,6 +290,19 @@ new Vue({
     isActive:true
   }
 })
+new Vue({
+  el:'#inline-style-object-syntax',
+  data: {
+    activeColor: 'red',
+    fontSize: 30,
+    styleObject: {
+      color: 'green',
+      fontSize: '13px'
+    }
+  }
+})
+
+
 
 
 setInterval(function() {
