@@ -327,6 +327,18 @@ new Vue({
   }
 })
 
+new Vue({
+  el:'#control-by-key',
+  data:{
+    loginType:'username',
+  },
+  methods: {
+    toggleLoginType: function () {
+      return this.loginType = this.loginType === 'username' ? 'email' : 'username'
+    }
+  }
+})
+
 setInterval(function() {
   'use strict';
   console.log('baaasss');
