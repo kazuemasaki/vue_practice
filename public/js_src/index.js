@@ -302,8 +302,19 @@ new Vue({
   }
 })
 
-
-
+new Vue({
+  el:'#inline-style-array-syntax',
+  data: {
+    baseStyles: {
+      color: 'blue',
+      fontSize: '13px'
+    },
+    overridingStyles: {
+      color: 'yellow',
+      fontStyle : 'italic'
+    }
+  }
+})
 
 setInterval(function() {
   'use strict';
