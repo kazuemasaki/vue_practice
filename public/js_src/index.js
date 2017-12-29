@@ -280,6 +280,18 @@ new Vue({
   }
 })
 
+Vue.component('my-component', {
+  template: '<p class="foo bar">Hi</p>'
+})
+
+new Vue({
+  el:'#in-component',
+  data: {
+    isActive:true
+  }
+})
+
+
 setInterval(function() {
   'use strict';
   console.log('baaasss');
