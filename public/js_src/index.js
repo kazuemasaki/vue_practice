@@ -371,6 +371,27 @@ new Vue({
   }
 })
 
+new Vue({
+  el: '#evennumber-example',
+  data: {
+    numbers: [ 1, 2, 3, 4, 5 ]
+  },
+  computed: {
+    evenNumbers: function () {
+      return this.numbers.filter(function (number) {
+        return number % 2 === 0
+      })
+    }
+  },
+  methods: {
+    even: function (numbers) {
+      return numbers.filter(function (number) {
+        return number % 2 === 0
+      })
+    }
+  }  
+})
+
 setInterval(function() {
   'use strict';
   console.log('baaasss');
