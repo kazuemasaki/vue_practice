@@ -346,7 +346,7 @@ new Vue({
   }
 })
 
-new Vue({
+var example1 = new Vue({
   el: '#v-for-example-1',
   data: {
     parentMessage: 'Parent',
@@ -355,6 +355,9 @@ new Vue({
       { message: 'Bar' }
     ]
   }
+})
+example1.items = example1.items.filter(function (item) {
+  return item.message.match(/Foo/)
 })
 
 new Vue({
