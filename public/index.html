@@ -158,6 +158,14 @@
       <span v-for="n in 10">{{ n }} </span>
     </div>
   </div>
+  <div id="v-for-with-template">
+    <ul>
+      <template v-for="item in items">
+        <li>{{ item.msg }}</li>
+        <li class="divider"></li>
+      </template>
+    </ul>    
+  </div>
   <a href="./hoge/foo.html">link</a>
   <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>

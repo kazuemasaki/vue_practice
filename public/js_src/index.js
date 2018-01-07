@@ -392,6 +392,16 @@ new Vue({
   }  
 })
 
+new Vue({
+  el: '#v-for-with-template',
+  data :{
+    items:[
+      { msg: 'Foo' },
+      { msg: 'Bar' }
+    ]
+  }
+})
+
 setInterval(function() {
   'use strict';
   console.log('baaasss');
