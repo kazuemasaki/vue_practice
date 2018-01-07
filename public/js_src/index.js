@@ -339,6 +339,13 @@ new Vue({
   }
 })
 
+new Vue({
+  el:'#v-show-example',
+  data: {
+    ok:false
+  }
+})
+
 setInterval(function() {
   'use strict';
   console.log('baaasss');
