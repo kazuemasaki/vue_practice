@@ -346,6 +346,17 @@ new Vue({
   }
 })
 
+new Vue({
+  el: '#v-for-example-1',
+  data: {
+    parentMessage: 'Parent',
+    items: [
+      { message: 'Foo' },
+      { message: 'Bar' }
+    ]
+  }
+})
+
 setInterval(function() {
   'use strict';
   console.log('baaasss');

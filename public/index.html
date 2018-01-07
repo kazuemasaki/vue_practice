@@ -132,6 +132,15 @@
   <div id="v-show-example">
     <h1 v-show="ok">Hello!</h1>
   </div>
+  <ul id="v-for-example-1">
+    <li v-for="item in items">
+      {{ item.message }}
+    </li>
+    <li v-for="(item, index) in items">
+      {{ parentMessage }} - {{ index }} - {{ item.message }}
+    </li>    
+  </ul>
+
   <a href="./hoge/foo.html">link</a>
   <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
