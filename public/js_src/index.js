@@ -505,6 +505,20 @@ new Vue({
       {value:'b',text:'Back'},
       {value:'c',text:'Cancel'},
     ]
+  },
+  computed: {
+    selectedText:function() {
+      if(this.selected == '') {
+        return '';
+      }
+      var matchedElement = this.options.filter((element)=> {
+        return (element.value == this.selected) ;
+      })
+      if(matchedElement.length != 1) {
+        return '';
+      }
+      return matchedElement[0].text;
+    }
   }
 })
 
