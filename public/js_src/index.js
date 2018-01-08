@@ -443,6 +443,13 @@ new Vue({
   }
 })
 
+new Vue({
+  el: '#example-1',
+  data: {
+    counter: 0
+  }
+})
+
 setInterval(function() {
   'use strict';
   console.log('baaasss');
