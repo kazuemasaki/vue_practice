@@ -236,7 +236,13 @@
           v-bind:text="option.text"
         >
       </select>
-      <span>Selected: {{ selected }} : {{selectedText}}</span>      
+      <span>Selected: {{ selected }} : {{selectedText}}</span>   
+      <select v-model="selected2">
+        <!-- インラインオブジェクトリテラル -->
+        <option v-bind:value="{ number: 123 }">123</option>
+        <option v-bind:value="{ number: 124 }">124</option>
+      </select>   
+      <span>{{ selected2.number }}</span>
     </div>
   </div>
   <a href="./hoge/foo.html">link</a>

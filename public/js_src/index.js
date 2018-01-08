@@ -504,7 +504,10 @@ new Vue({
       {value:'a',text:'Amidara'},
       {value:'b',text:'Back'},
       {value:'c',text:'Cancel'},
-    ]
+    ],
+    selected2: {
+      number:123
+    }
   },
   computed: {
     selectedText:function() {
