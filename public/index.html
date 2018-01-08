@@ -197,7 +197,48 @@
       Submit
     </button>
   </div>
-
+  <div id="forms-example">
+    <input v-model="message" placeholder="edit me">
+    <p>Message is: {{ message }}</p>
+    <span>Multiline message is:</span>
+    <p style="white-space: pre-line;">{{ message }}</p>
+    <br>
+    <textarea v-model="message" placeholder="add multiple lines"></textarea>    
+    <input type="checkbox" id="checkbox" v-model="checked">
+    <label for="checkbox">{{ checked }}</label>  
+    <div>
+      <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+      <label for="jack">Jack</label>
+      <input type="checkbox" id="john" value="John" v-model="checkedNames">
+      <label for="john">John</label>
+      <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+      <label for="mike">Mike</label>
+      <br>
+      <span>Checked names: {{ checkedNames }}</span>
+    </div>    
+    <div>
+      <input type="radio" id="one" value="One" v-model="picked">
+      <label for="one">One</label>
+      <br>
+      <input type="radio" id="two" value="Two" v-model="picked">
+      <label for="two">Two</label>
+      <br>
+      <span>Picked: {{ picked }}</span>      
+    </div> 
+    <div>
+      <select v-model="selected">
+        <option disabled value="">Please select one</option>
+        <option 
+          is="select-option" 
+          v-for="option in options" 
+          v-bind:key="option.value" 
+          v-bind:value="option.value"
+          v-bind:text="option.text"
+        >
+      </select>
+      <span>Selected: {{ selected }} : </span>      
+    </div>
+  </div>
   <a href="./hoge/foo.html">link</a>
   <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>

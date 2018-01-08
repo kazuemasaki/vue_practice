@@ -482,6 +482,32 @@ new Vue({
   }
 })
 
+Vue.component('select-option', {
+  template: '\
+    <option v-bind:value="value">\
+      {{ text }}\
+    </option>\
+  ',
+  props: ['value','text']
+})
+
+
+new Vue({
+  el: '#forms-example',
+  data:{
+    message: 'ge',
+    checked: true,
+    checkedNames: ['Jack'],
+    picked: 'Two',
+    selected: 'c',
+    options:[
+      {value:'a',text:'Amidara'},
+      {value:'b',text:'Back'},
+      {value:'c',text:'Cancel'},
+    ]
+  }
+})
+
 setInterval(function() {
   'use strict';
   console.log('baaasss');
