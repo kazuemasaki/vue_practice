@@ -468,6 +468,19 @@ new Vue({
   }
 })
 
+new Vue({
+  el: '#example-3',
+  methods: {
+    say: function (message) {
+      alert(message)
+    },
+    warn: function (message, event) {
+      // ネイティブイベントを参照しています
+      if (event) event.preventDefault()
+      alert(message)
+    }    
+  }
+})
 
 setInterval(function() {
   'use strict';

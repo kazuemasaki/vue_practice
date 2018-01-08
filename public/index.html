@@ -190,6 +190,14 @@
     <!-- `greet` は、あらかじめ定義したメソッドの名前 -->
     <button v-on:click="greet">Greet</button>
   </div>  
+  <div id="example-3">
+    <button v-on:click="say('hi')">Say hi</button>
+    <button v-on:click="say('what')">Say what</button>
+    <button v-on:click="warn('Form cannot be submitted yet.', $event)">
+      Submit
+    </button>
+  </div>
+
   <a href="./hoge/foo.html">link</a>
   <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
