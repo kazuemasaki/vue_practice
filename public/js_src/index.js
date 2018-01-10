@@ -525,6 +525,13 @@ new Vue({
   }
 })
 
+new Vue({
+  el:'#lazy-example',
+  data: {
+    lazy:'llllazy'
+  }
+})
+
 setInterval(function() {
   'use strict';
   console.log('baaasss');
