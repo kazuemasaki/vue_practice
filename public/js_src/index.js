@@ -532,6 +532,15 @@ new Vue({
   }
 })
 
+new Vue({
+  el:'#local-component',
+  components:{
+    'my-component': {
+      template: '<div>A custom component!</div>'
+    }
+  }
+})
+
 setInterval(function() {
   'use strict';
   console.log('baaasss');
