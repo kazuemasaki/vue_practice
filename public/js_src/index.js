@@ -536,13 +536,14 @@ new Vue({
   el:'#local-component',
   components:{
     'my-component': {
-      template: `<div>A custom component!<div>{{ dynamic }}</div></div>
+      template: `<div v-bind:id="dynamic3">A custom component! <div v-bind:class="dynamic2"> {{dynamic2}}{{ dynamic }}</div></div>
       `,
-      props: ['dynamic'],
+      props: ['dynamic','dynamic2','dynamic3'],
     }
   },
   data:{
-    dyna : 'from root'
+    dyna : 'from root',
+    dyna3 : 'text'
   }
 })
 
