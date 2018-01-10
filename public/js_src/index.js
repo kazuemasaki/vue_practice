@@ -536,8 +536,13 @@ new Vue({
   el:'#local-component',
   components:{
     'my-component': {
-      template: '<div>A custom component!</div>'
+      template: `<div>A custom component!<div>{{ dynamic }}</div></div>
+      `,
+      props: ['dynamic'],
     }
+  },
+  data:{
+    dyna : 'from root'
   }
 })
 
