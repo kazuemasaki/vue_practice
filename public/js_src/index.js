@@ -570,6 +570,9 @@ new Vue({
   methods: {
     incrementTotal: function () {
       this.total += 1
+    },
+    hoge: function () {
+      console.log('hoge');
     }
   }
 })

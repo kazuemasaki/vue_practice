@@ -262,6 +262,7 @@
     <p>{{ total }}</p>
     <button-counter v-on:increment="incrementTotal"></button-counter>
     <button-counter v-on:increment="incrementTotal"></button-counter>
+    <button-counter v-on:increment="incrementTotal" v-on:click.native="hoge"></button-counter>
   </div>  
   <a href="./hoge/foo.html">link</a>
   <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
