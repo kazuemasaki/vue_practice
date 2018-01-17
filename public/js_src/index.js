@@ -647,6 +647,13 @@ new Vue({
   }
 })
 
+new Vue({
+  el: '#transition-example-1',
+  data: {
+    show: true
+  }
+})
+
 setInterval(function() {
   'use strict';
   console.log('baaasss');
