@@ -562,10 +562,47 @@ Vue.component('button-counter', {
   },
 })
 
+Vue.component('currency-input', {
+  template: '\
+    <span>\
+      $\
+      <input\
+        ref="input"\
+        v-bind:value="value"\
+        v-on:input="updateValue($event.target.value)">\
+    </span>\
+  ',
+  props: ['value'],
+  methods: {
+    // 値を直接的に更新する代わりに、このメソッドを使用して input の
+    // 値の整形と値に対する制約が行われる
+    updateValue: function (value) {
+      var formattedValue = value
+        // 両端のスペースを削除
+        .trim()
+        // 小数点2桁以下まで短縮
+        .slice(
+          0,
+          value.indexOf('.') === -1
+            ? value.length
+            : value.indexOf('.') + 3
+        )
+      // 値が既に正規化されていないならば、
+      // 手動で適合するように上書き
+      if (formattedValue !== value) {
+        this.$refs.input.value = formattedValue
+      }
+      // input イベントを通して数値を発行する
+      this.$emit('input', Number(formattedValue))
+    }
+  }
+})  
+
 new Vue({
   el: '#counter-event-example',
   data: {
-    total: 0
+    total: 0,
+    price: 100
   },
   methods: {
     incrementTotal: function () {
@@ -574,6 +611,32 @@ new Vue({
     hoge: function () {
       console.log('hoge');
     }
+  }
+})
+
+Vue.component('my-checkbox', {
+  model: {
+    prop: 'checked2',
+    event: 'change'
+  },
+  props: {
+    checked2: Boolean,
+    // これによって、 `value` プロパティを別の目的で利用することを許可します。
+    value: String
+  },
+  template: `
+    <label>
+      <input v-bind:value="value" type="checkbox" v-bind:checked="checked2">{{value}}
+    </label>
+  `
+})
+new Vue({
+  el: '#vmodel-custom',
+  data: {
+    foo: true
+  // },
+  // created: function() {
+  //   this.foo = false;
   }
 })
 

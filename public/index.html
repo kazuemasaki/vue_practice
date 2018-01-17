@@ -263,7 +263,16 @@
     <button-counter v-on:increment="incrementTotal"></button-counter>
     <button-counter v-on:increment="incrementTotal"></button-counter>
     <button-counter v-on:increment="incrementTotal" v-on:click.native="hoge"></button-counter>
+    <currency-input v-model="price"></currency-input>
   </div>  
+  <div id="vmodel-custom">
+    <my-checkbox v-model="foo" value="some value"></my-checkbox>
+    <my-checkbox
+      :checked2="foo"
+      @change="val => { foo = val }"
+      value="some value">
+    </my-checkbox>
+  </div>
   <a href="./hoge/foo.html">link</a>
   <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
