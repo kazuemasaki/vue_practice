@@ -640,6 +640,13 @@ new Vue({
   }
 })
 
+new Vue({
+  el: '#transistion-demo',
+  data: {
+    show: true
+  }
+})
+
 setInterval(function() {
   'use strict';
   console.log('baaasss');

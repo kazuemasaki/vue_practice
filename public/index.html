@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
   <title>Vue</title>
+  <link href='./css/transition.css' rel='stylesheet' type='text/css'>
   <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
@@ -273,6 +274,15 @@
       value="some value">
     </my-checkbox>
   </div>
+  <div id="transistion-demo">
+    <button v-on:click="show = !show">
+      Toggle
+    </button>
+    <transition name="fade">
+      <p v-if="show">hello</p>
+    </transition>
+  </div>
+
   <a href="./hoge/foo.html">link</a>
   <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
