@@ -659,13 +659,28 @@ new Vue({
   components:{
     'my-component': {
       template: `
-      <div>
-        <h2>I'm the child title</h2>
-        <slot>
-          This will only be displayed if there is no content
-          to be distributed.
-        </slot>
-      </div>
+        <div>
+          <h2>I'm the child title</h2>
+          <slot>
+            This will only be displayed if there is no content
+            to be distributed.
+          </slot>
+        </div>
+      `
+    },
+    'app-layout':{
+      template: `
+        <div class="container">
+          <header>
+            <slot name="header"></slot>
+          </header>
+          <main>
+            <slot></slot>
+          </main>
+          <footer>
+            <slot name="footer">this will be displayed when no contents are inserted as footer</slot>
+          </footer>
+        </div>      
       `
     }
   },  
