@@ -654,6 +654,23 @@ new Vue({
   }
 })
 
+new Vue({
+  el: '#slot-example',
+  components:{
+    'my-component': {
+      template: `
+      <div>
+        <h2>I'm the child title</h2>
+        <slot>
+          This will only be displayed if there is no content
+          to be distributed.
+        </slot>
+      </div>
+      `
+    }
+  },  
+})
+
 setInterval(function() {
   'use strict';
   console.log('baaasss');

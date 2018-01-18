@@ -274,6 +274,17 @@
       value="some value">
     </my-checkbox>
   </div>
+  <div id="slot-example">
+    <h1>I'm the parent title</h1>
+    <my-component>
+      <p>This is some original content</p>
+      <p>This is some more original content</p>
+    </my-component>
+    <my-component>
+    </my-component>
+  </div>
+
+
   <div id="transistion-demo">
     <button v-on:click="show = !show">
       Toggle
