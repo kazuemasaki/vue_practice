@@ -25,12 +25,16 @@
     </tr>
   </thead>
   <tbody>
-    <tr v-for="(item,index) in tr">
+    <tr v-for="(item,index) in tr" v-bind:key="item.id">
       <th>{{item.rank}}</th>
       <td>{{item.teamname}}</td>
       <td>{{item.planet}}</td>
       <td>{{item.points}}</td>
-      <td><button>削除</button></td>
+      <td>
+        <button v-on:click="del_row(index)">
+          削除
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>

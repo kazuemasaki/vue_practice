@@ -38,5 +38,10 @@ new Vue({
         points:65
       },
     ]
+  },
+  methods:{
+    del_row :function(index) {
+      this.tr.splice(index,1);
+    }
   }
 })
