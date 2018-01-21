@@ -697,6 +697,37 @@ new Vue({
   },  
 })
 
+new Vue({
+  el: '#scroll-app',
+  data: {
+    scrollYBottom: 0,
+    targetY:0
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+        this.scrollYBottom = window.scrollY+window.innerHeight;
+        console.log(this.scrollYBottom);
+        this.targetY = document.getElementById('scroll-target').getBoundingClientRect().top+ window.pageYOffset;
+    }
+  },
+  computed: {
+    needtargetloading : function () {
+      return (this.targetY <= this.scrollYBottom);
+    },
+    img : function() {
+      console.log(this.needtargetloading);
+      if(this.needtargetloading) {
+        return 'https://st.jetsetrecords.net/product/thumbnail/3/2/6/326c45a45de28d3c482161ab9a12c124/medium.jpg'
+      } else {
+        return '';
+      }
+    }
+  }
+})
+
 setInterval(function() {
   'use strict';
   console.log('baaasss');
