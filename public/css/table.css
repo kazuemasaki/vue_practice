@@ -1,7 +1,9 @@
 .list-enter-active, .list-leave-active {
-  transition: all 0.5s;
+  position: absolute;
 }
 .list-enter, .list-leave-to /* .list-leave-active for below version 2.1.8 */ {
   opacity: 0;
-  /*transform: translateY(30px);*/
+}
+.list-move {
+  transition: transform 1s;
 }
