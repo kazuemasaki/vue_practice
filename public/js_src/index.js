@@ -682,6 +682,17 @@ new Vue({
           </footer>
         </div>      
       `
+    },
+    'child':{
+      template:`
+        <div class="child" v-bind:id="prop_id">
+          <slot v-bind:id="span_id" text="hello from child"></slot>
+        </div>
+      `,
+      props:{
+        prop_id : String,
+        span_id : null
+      }
     }
   },  
 })

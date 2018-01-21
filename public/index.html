@@ -294,6 +294,14 @@
     <app-layout>
       aaa
     </app-layout>
+    <div class="parent">
+      <child prop_id="pooooo" span_id="can">
+        <template slot-scope="props">
+          <span>hello from parent</span>
+          <span>{{ props.text }}{{ props.id}}</span>
+        </template>
+      </child>
+    </div>    
   </div>
 
 
