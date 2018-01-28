@@ -701,7 +701,8 @@ new Vue({
   el: '#scroll-app',
   data: {
     scrollYBottom: 0,
-    targetY:0
+    targetY:0,
+    img:''
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
@@ -713,16 +714,11 @@ new Vue({
         this.targetY = document.getElementById('scroll-target').getBoundingClientRect().top+ window.pageYOffset;
     }
   },
-  computed: {
-    needtargetloading : function () {
-      return (this.targetY <= this.scrollYBottom);
-    },
-    img : function() {
-      console.log(this.needtargetloading);
-      if(this.needtargetloading) {
-        return 'https://st.jetsetrecords.net/product/thumbnail/3/2/6/326c45a45de28d3c482161ab9a12c124/medium.jpg'
-      } else {
-        return '';
+  watch:{
+    scrollYBottom: function(new_value) {
+      console.log(new_value);
+      if(this.targetY <= new_value) {
+        this.img = 'https://st.jetsetrecords.net/product/thumbnail/3/2/6/326c45a45de28d3c482161ab9a12c124/medium.jpg';
       }
     }
   }
