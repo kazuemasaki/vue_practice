@@ -656,6 +656,19 @@ new Vue({
 
 new Vue({
   el: '#slot-example',
+  data:{
+    items:[
+      {
+        'text': 'aaaa'
+      },
+      {
+        'var': 'aaaa'
+      },
+      {
+        'text': 'bbb'
+      }
+    ]
+  },
   components:{
     'my-component': {
       template: `
@@ -693,6 +706,19 @@ new Vue({
         prop_id : String,
         span_id : null
       }
+    },
+    'my-awesome-list':{
+      template:`
+        <ul>
+          <li>defined in template</li>
+          <slot name="item"
+            v-for="item in items"
+            :text="item.text">
+             フォールバックコンテンツはここへ 
+          </slot>
+        </ul>      
+      `,
+      props:['items']
     }
   },  
 })

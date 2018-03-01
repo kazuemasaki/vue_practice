@@ -302,6 +302,17 @@
         </template>
       </child>
     </div>    
+    <my-awesome-list :items="items">
+      <!-- スコープ付きスロットにも名前をつけることができます -->
+      <li
+        slot="item"
+        slot-scope="props"
+        class="my-fancy-item">
+        {{ props.text }}
+      </li>
+      <li>defined in parent</li>
+
+    </my-awesome-list>
   </div>
 
 
