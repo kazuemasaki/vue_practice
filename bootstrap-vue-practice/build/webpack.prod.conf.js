@@ -57,6 +57,7 @@ var webpackConfig = merge(baseWebpackConfig, {
         : config.build.outputPath.index,
       template: 'src/index.html',
       inject: true,
+      chunks: ['manifest','vendor','app'],
       minify: {
         // removeComments: true,
         // collapseWhitespace: true,
@@ -73,6 +74,7 @@ var webpackConfig = merge(baseWebpackConfig, {
         : config.build.outputPath.two,
       template: 'src/two.html',
       inject: true,
+      chunks: ['manifest','vendor','two'],
       minify: {
         // removeComments: true,
         // collapseWhitespace: true,
