@@ -6,6 +6,7 @@ var merge = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.conf')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var HtmlWebpackPluginConfig = require('./htmlwebpackplugin.conf')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 
@@ -47,44 +48,31 @@ var webpackConfig = merge(baseWebpackConfig, {
       cssProcessorOptions: {
         safe: true
       }
-    }),
+    })
+  ].concat(
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
-      filename: process.env.NODE_ENV === 'testing'
-        ? 'index.html'
-        : config.build.outputPath.index,
-      template: 'src/index.html',
-      inject: true,
-      chunks: ['manifest','vendor','app'],
-      minify: {
-        // removeComments: true,
-        // collapseWhitespace: true,
-        removeAttributeQuotes: true
-        // more options:
-        // https://github.com/kangax/html-minifier#options-quick-reference
-      },
-      // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-      chunksSortMode: 'dependency'
-    }),
-    new HtmlWebpackPlugin({
-      filename: process.env.NODE_ENV === 'testing'
-        ? 'index.html'
-        : config.build.outputPath.two,
-      template: 'src/two.html',
-      inject: true,
-      chunks: ['manifest','vendor','two'],
-      minify: {
-        // removeComments: true,
-        // collapseWhitespace: true,
-        removeAttributeQuotes: true
-        // more options:
-        // https://github.com/kangax/html-minifier#options-quick-reference
-      },
-      // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-      chunksSortMode: 'dependency'
-    }),
+    HtmlWebpackPluginConfig.entry.map(function(entry){
+        // https://github.com/ampedandwired/html-webpack-plugin
+        return new HtmlWebpackPlugin({
+          filename: config.build.outputPath[entry.key],
+          template: entry.template,
+          inject: true,
+          chunks: ['manifest','vendor'].concat([entry.chunks]),
+          minify: {
+            // removeComments: true,
+            // collapseWhitespace: true,
+            removeAttributeQuotes: true
+            // more options:
+            // https://github.com/kangax/html-minifier#options-quick-reference
+          },
+          // necessary to consistently work with multiple chunks via CommonsChunkPlugin
+          chunksSortMode: 'dependency'
+        });
+      }
+    )
+  ).concat([
     // keep module.id stable when vender modules does not change
     new webpack.HashedModuleIdsPlugin(),
     // split vendor js into its own file
@@ -115,7 +103,7 @@ var webpackConfig = merge(baseWebpackConfig, {
         ignore: ['.*']
       }
     ])
-  ]
+  ])
 })
 
 if (config.build.productionGzip) {
