@@ -7,16 +7,27 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <style>
+      .box-container{
+        width: 100px;
+        height: 100px;
+        background: #ddd;
+        margin-bottom: 5px;
+      }
+    </style>
     <title>Hello, world!</title>
   </head>
   <body>
-    <h2 class="font-weight-normal display-4">Hello Bootstrap</h2>
-    <div class="text-center bg-primary">BOX</div>
-    <div class="text-right bg-success text-warning">BOX</div>
-    <div class="text-center bg-info font-weight-bold">BOX</div>
-    <div class="text-center bg-dark text-light">BOX</div>
-    
+    <div class="box-container">
+        <div class="bg-primary w-25 h-50">
+          BOX
+        </div>
+    </div>
+    <div class="box-container">
+        <div class="bg-success w-75 h-100">
+          BOX
+        </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
