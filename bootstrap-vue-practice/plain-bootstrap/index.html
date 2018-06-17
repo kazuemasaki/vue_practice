@@ -64,23 +64,25 @@
       <section class="py-5">
         <h2 class="mb-5 text-center">How to use</h2>
         <div class="container">
-          <ul>
-            <li>
-              <a href="#ios">iOS</a>
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a href="#ios" class="nav-link active" data-toggle="tab">iOS</a>
             </li>
-            <li>
-              <a href="#android">Android</a>
+            <li class="nav-item">
+              <a href="#android" class="nav-link" data-toggle="tab">Android</a>
             </li>
           </ul>
-          <div id="ios">
-            <p>
-              Hello iOS.Hello iOS.Hello iOS.Hello iOS.Hello iOS.Hello iOS.Hello iOS.
-            </p>
-          </div>
-          <div id="android">
-            <p>
-              Hello Android.Hello Android.Hello Android.Hello Android.Hello Android.Hello Android.
-            </p>
+          <div class="tab-content py-4">
+            <div id="ios" class="tab-pane active">
+              <p>
+                Hello iOS.Hello iOS.Hello iOS.Hello iOS.Hello iOS.Hello iOS.Hello iOS.
+              </p>
+            </div>
+            <div id="android" class="tab-pane">
+              <p>
+                Hello Android.Hello Android.Hello Android.Hello Android.Hello Android.Hello Android.
+              </p>
+            </div>
           </div>
         </div>
       </section>
